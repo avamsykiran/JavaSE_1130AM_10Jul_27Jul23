@@ -1,0 +1,17 @@
+package com.cts.oopdemo.service;
+
+import com.cts.oopdemo.model.Employee;
+
+public class HrService {
+
+	public static final double HRA_PERCENT = 0.25;
+	
+	private double computeHra(double salary){
+		return salary*HRA_PERCENT;
+	}
+	
+	public void compute(Employee emp){
+		emp.setHra(computeHra(emp.getSalary()));
+		emp.setNetPay(emp.getSalary()+emp.getHra());
+	}
+}

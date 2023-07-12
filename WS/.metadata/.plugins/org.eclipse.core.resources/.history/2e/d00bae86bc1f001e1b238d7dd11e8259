@@ -1,0 +1,13 @@
+package com.cts.oopdemo;
+
+import com.cts.oopdemo.model.Employee;
+
+public class App01 {
+
+	public static void main(String[] args) {
+	
+		Employee emp1 = new Employee(101, "Vamsy", 45678.0);
+		System.out.println(emp1);
+	}
+
+}
