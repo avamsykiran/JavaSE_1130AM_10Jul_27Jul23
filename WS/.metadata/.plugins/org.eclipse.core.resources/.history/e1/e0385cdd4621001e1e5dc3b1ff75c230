@@ -1,0 +1,12 @@
+package com.cts.javasefundas;
+
+import com.cts.javasefundas.model.ComplexNumber;
+
+public class App01 {
+
+	public static void main(String[] args) {
+		ComplexNumber cn1 = new ComplexNumber(10, -6);
+		System.out.println(cn1);
+	}
+
+}

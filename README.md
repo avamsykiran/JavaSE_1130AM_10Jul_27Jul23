@@ -341,10 +341,64 @@ Java SE
 
                                  does not support multiple inheretence      does support multiple inheretence
 
+    Assignemnt
 
+                    Loan
+                    |
+                    -------------------------
+                    |                       |
+                    HousingLoan             PersonalLoan
+                    |
+                    MortagageLoan
+
+    Java inbuilt packages
+    --------------------------------------------------------------------------------------------
+
+        java.lang                   String Manipulations, Exception Handling, Multi-threading
+        java.time                   Data time manipulations
+        java.util                   Geenrics, Collections, Utility classes
+        java.util.function          Functional interfaces, Lambda Expressions
+        java.util.stream            Streams API
+        java.io                     IO Streams
+        java.nio                    Novel IO Streams (Non-Blocking IO Streams)
+        java.sql                    JDBC
                                 
+        java.lang
 
+            Object
+                        int hashcode()
+                        boolean equals(Object)
+                        String toString()
+                        void finalize()
 
+            System                                                  c-lang       cpp-lang
+                        public static java.io.PrintStream out       stdout      cout
+                        public static java.io.PrintStream err       stderr      cerr
+                        public static java.io.InputStream in        stdin       cin
+                        public stativ void gc();
+                        public static void exit(int);
+
+            Math
+
+            String                  is immutable, ence any modification to a string object resutls in a new string object.
+                                    so direct string modification is very costly.
+
+            StringBuilder           
+            StringBuffer
+                                    help modify a string without creating new string objects.
+                                    StringBuilder is used in single-thread application as it is not synchronous
+                                    StringBuffer is used in multi-thread application as it is synchronous
+
+            Wrapper Classes
+                                Integer
+                                Float
+                                Double
+                                ...etc.,
+
+                                Integer iObj1 = 45; //auto-boxing
+                                int x = iObj1;      //auto-unboxing
+
+            
 
 
 

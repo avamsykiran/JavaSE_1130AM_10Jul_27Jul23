@@ -1,0 +1,14 @@
+package com.cts.javasefundas;
+
+import com.cts.javasefundas.model.ComplexNumber;
+
+public class App02 {
+
+	public static void main(String[] args) {
+		for (int i = 1; i < 10; i++) {
+			int randomNumber = Math.random();
+			System.out.println(randomNumber);
+		}
+	}
+
+}

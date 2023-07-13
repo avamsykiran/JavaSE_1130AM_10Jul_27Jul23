@@ -3,4 +3,12 @@
 <fullyQualifiedTypeName name="com.cts.oopdemo.model.Employee"/>
 <fullyQualifiedTypeName name="com.cts.oopdemo.service.HrService"/>
 <fullyQualifiedTypeName name="com.cts.oopdemo.model.ContractEmployee"/>
+<fullyQualifiedTypeName name="com.cts.oopdemo.model.Manager"/>
+<fullyQualifiedTypeName name="com.cts.oopdemo.model.AdBoard"/>
+<fullyQualifiedTypeName name="com.cts.oopdemo.service.AdEstimationService"/>
+<fullyQualifiedTypeName name="com.cts.oopdemo.model.RectangularBoard"/>
+<fullyQualifiedTypeName name="com.cts.oopdemo.model.CircularBoard"/>
+<fullyQualifiedTypeName name="com.cts.javasefundas.model.ComplexNumber"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 </qualifiedTypeNameHistroy>
