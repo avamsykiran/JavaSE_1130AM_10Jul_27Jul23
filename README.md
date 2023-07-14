@@ -398,9 +398,84 @@ Java SE
                                 Integer iObj1 = 45; //auto-boxing
                                 int x = iObj1;      //auto-unboxing
 
-            
+        Exception Handling
+
+                an exception is a break point of the application due to errorsome data or
+                errorsome operation.
+
+                java.lang.Throwable
+                                |
+                                -------------
+                                |           |
+                                Error       Exception       <--- Sub-Classes (CHECKED EXCEPTIONS)
+                                            |
+                                            RuntimeException <--- Sub-classes (UNCHECKED EXCEPTIONS)
 
 
+                    UnChecked Exceptions are to be avoided but not handled. The compiler will not
+                    CHECK if this sort of an exception is handled or not.
 
+                    class EmployeeServbice {
+                        public void increaseSalary(Employee emp){
+                            if(emp!=null){
+                                emp.setSalary(emp.getSalary()*2);
+                            }
+                        }
+                    }
 
+                    Checked Exceptions can not be avoided/prevented, but they msut be handled using a special
+                    control strucutre called try...catch statement. The compiler will CHECK if these sort 
+                    exceptions are handled or not and will not compile the appliction if these
+                    are not handled.
+
+                    Exceptions that are developed by the developer are called user-defiend exceptions,
+                    and Exceptions that are already provided by Java are called in-built Exception.
+
+                    We can create our own sub-class of Exception or RutnimeException to create
+                    Checked or Unchecked user-defiend exceptions.
+
+                    try-catch statement
+
+                        try{
+                            //statements that may raise an exception
+                        }catch(ExceptionType exp){
+                            //log the exception for dubugging purposes
+                            //either tranfer the exception to the next layer of the app
+                            //or we will display a user understandable messages
+                        }catch(ExceptionType2 exp){
+                            //log the exception for dubugging purposes
+                            //either tranfer the exception to the next layer of the app
+                            //or we will display a user understandable messages
+                        }catch(ExceptionType3 exp){
+                            //log the exception for dubugging purposes
+                            //either tranfer the exception to the next layer of the app
+                            //or we will display a user understandable messages
+                        }finally{
+                            //code that has to execute at any cost irrespective of the exception may raise or not
+                        }
+
+                    try-with-multiCatch statement.
+
+                        try{
+                            //statements that may raise an exception
+                        }catch(ExceptionType | ExceptionType2  | ExceptionType3 exp){
+                            //log the exception for dubugging purposes
+                            //either tranfer the exception to the next layer of the app
+                            //or we will display a user understnadable messages
+                        }finally{
+                            //code that has to execute at any cost irrespective of the exception may raise or not
+                        }
+
+                    try-with-resources statement.
+
+                        try(Closable obj = new ClosableObject(); ) {
+                            //statements that may raise an exception
+                        }catch(ExceptionType | ExceptionType2  | ExceptionType3 exp){
+                            //log the exception for dubugging purposes
+                            //either tranfer the exception to the next layer of the app
+                            //or we will display a user understnadable messages
+                        }
+
+                    throw           used to raise a user defiend exception.
+                    throws          used to transfer an exception from a method to its calling method.
 

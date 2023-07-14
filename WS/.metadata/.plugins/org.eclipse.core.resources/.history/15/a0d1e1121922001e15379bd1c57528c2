@@ -1,0 +1,46 @@
+package com.cts.exceptionsdemo;
+
+import java.util.Scanner;
+
+import com.cts.exceptionsdemo.model.BankAccount;
+import com.cts.exceptionsdemo.service.BankingService;
+
+public class CheckedExceptionDemo {
+
+	public static void main(String[] args) {
+		BankAccount acc = new BankAccount("SB10011",5600);
+		BankingService bankingService = new BankingService();
+		
+		Scanner scan = new Scanner(System.in);
+		
+		double amt =0;
+		
+		String cmd = null;
+		
+		while(!"quit".equals(cmd)){
+			System.out.print("Command (deposite/withdraw/balance/quit) > ");
+			cmd = scan.next().toLowerCase();
+			
+			switch(cmd){
+			case "balance":
+				System.out.println(acc.getBalance());
+				break;
+			case "deposite":
+				System.out.print("Amount> ");
+				amt = scan.nextDouble();
+				bankingService.deposite(acc, amt);
+				System.out.println("Deposited!");
+				break;
+			case "withdraw":
+				System.out.print("Amount> ");
+				amt = scan.nextDouble();
+				bankingService.withdraw(acc, amt);
+				System.out.println("Withdrawn!");
+				break;
+			}
+		}
+		
+		scan.close();
+	}
+
+}

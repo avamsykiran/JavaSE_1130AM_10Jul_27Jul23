@@ -1,0 +1,16 @@
+package com.cts.exceptionsdemo.service;
+
+import com.cts.exceptionsdemo.exception.DepositeException;
+import com.cts.exceptionsdemo.model.BankAccount;
+
+public class BankingService {
+
+	public void deposite(BankAccount acc,double amt){
+		if(acc!=null){
+			if(amt<0){
+				throw new DepositeException("Invalid Amount! Amount can not be negative");
+			}
+			acc.setBalance(acc.getBalance()+amt);
+		}
+	}
+}

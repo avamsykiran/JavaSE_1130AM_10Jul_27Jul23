@@ -13,5 +13,10 @@
     "location": "C:\\Cognizant\\ongoing\\JavaSE_1130AM_10Jul_27Jul23\\WS\\JavaSEFundas\\src",
     "status": "UNRESOLVED",
     "error": "No class path info available for \u0027C:\\Cognizant\\ongoing\\JavaSE_1130AM_10Jul_27Jul23\\WS\\JavaSEFundas\\src\u0027. Skipped."
+  },
+  "C:\\Cognizant\\ongoing\\JavaSE_1130AM_10Jul_27Jul23\\WS\\ExceptionsDemo\\src": {
+    "location": "C:\\Cognizant\\ongoing\\JavaSE_1130AM_10Jul_27Jul23\\WS\\ExceptionsDemo\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Cognizant\\ongoing\\JavaSE_1130AM_10Jul_27Jul23\\WS\\ExceptionsDemo\\src\u0027. Skipped."
   }
 }

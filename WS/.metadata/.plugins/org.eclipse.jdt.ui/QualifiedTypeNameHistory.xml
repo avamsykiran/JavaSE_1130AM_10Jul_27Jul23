@@ -9,6 +9,10 @@
 <fullyQualifiedTypeName name="com.cts.oopdemo.model.RectangularBoard"/>
 <fullyQualifiedTypeName name="com.cts.oopdemo.model.CircularBoard"/>
 <fullyQualifiedTypeName name="com.cts.javasefundas.model.ComplexNumber"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="com.cts.exceptionsdemo.exception.DepositeException"/>
+<fullyQualifiedTypeName name="com.cts.exceptionsdemo.exception.WithdrawException"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.cts.exceptionsdemo.model.BankAccount"/>
+<fullyQualifiedTypeName name="com.cts.exceptionsdemo.service.BankingService"/>
 </qualifiedTypeNameHistroy>
