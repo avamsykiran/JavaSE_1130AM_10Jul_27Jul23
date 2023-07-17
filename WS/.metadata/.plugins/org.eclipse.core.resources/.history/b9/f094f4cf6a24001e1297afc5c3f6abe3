@@ -1,0 +1,22 @@
+package com.cts.datetimeapidemo;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
+public class DateTimeApiDemoApp {
+
+	public static void main(String[] args) {
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		
+		LocalDate today = LocalDate.now();
+		LocalDate indiaIndependence = LocalDate.of(1947, Month.AUGUST, 15);
+		Period period= Period.between(indiaIndependence, today);
+		
+		System.out.println(today.format(formatter));
+		System.out.println(indiaIndependence.format(formatter));
+		System.out.println(period);
+	}
+
+}

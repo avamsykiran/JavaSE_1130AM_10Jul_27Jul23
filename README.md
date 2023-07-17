@@ -479,3 +479,125 @@ Java SE
                     throw           used to raise a user defiend exception.
                     throws          used to transfer an exception from a method to its calling method.
 
+        java.time       DataTiem API
+
+            LocalTime       .now(),.of(h,min,sec)
+            LocalDate       .now(),.of(y,mon,day)
+            LocalDateTime   .now(),.of(y,mon,day,h,min,sec)
+
+            ZonedDateTime   .now(ZoneId)
+
+            offer plusMethods and minusMethods for date arthemetics.
+            offer isBefore and isAfter methods for cronological comparision apart from equals methods
+            offer toString methdo and parse and format methods
+
+            DateTimeFormatter   .ofPattern(formatString)
+
+                a sample formatString  is "dd-MMM-yyyy hh:mm:ss"
+
+            Period      .between(start,end)     //measures the distence between two dates
+            Duration    .between(start,end)     //measures the distence between two times
+
+        java.util
+
+            Scanner
+            Random
+
+            Generics 
+
+                Generic is a ADT (abstract data type) that represents a non-realized type 
+                which cna be realized jsut before the usage.
+
+                public class Swapper<T> {
+                    public void swap(T a,T b){
+                        T t;
+                        t=a;
+                        a=b;
+                        b=t;
+                    }
+                }
+
+
+                Swapper<Employee> s1 = new Swapper<>();
+                s1.swap(emp1,emp2);
+
+                Swapper<String> s2 = new Swapper<>();
+                s2.swap(str1,str2);
+
+                Swapper<Integer> s3 = new Swapper<>();
+                s3.swap(n1,n2);
+
+            Collections
+
+                is the java's approach to data-structures.
+
+                java.util.Collection (interface)                all data structures
+                           |
+                           |    add(ele),remove(ele),contains(ele),size(),isEmpty(),stream()
+                           |                           
+                           | ← List (interface)                 Linear Data Structure
+                           |
+                           |        1. elements are arranged in an oder fashion
+                           |        2. elements can be indexed and can be accessed randomly through the index
+                           |        3. elements can be duplicate
+                           |        4. any number of nulls can also be inserted here
+                           |
+                           |        get(index),first(),last(),removeAt(index),indexOf(ele)
+                           |
+                           | ← Set (interface)                  Non-Linear Data Structure
+
+                                    1. elements arranged in a tree fashion
+                                    2. elements can not be indexed
+                                    3. elements can not be duplicate
+                                    4. only one null value can be inserted here
+
+                    List Implementations
+
+                        ArrayList           growable array, is not synchronized
+                        Vector              growable array, is synchronized
+                        LinkedList          doublly-linked list 
+
+
+                    Set Implementation
+
+                        HashSet             no predictable retriving order
+                        LinkedHashSet       entry order retrival
+                        TreeSet             ascending order of magnitude in retrival
+
+                    Dictate Comparision of Models like Employee/Book/BankAccount ..etc.,
+
+                        java.lang.Comparable<>      int compareTo(ele)
+                            //return 0 if this==ele
+                            //return -1 if this<ele
+                            //return +1 if this>ele
+
+                        java.util.Comparator<>      int compare(ele1,ele2)
+
+                            //return 0 if ele1==ele2
+                            //return -1 if ele1<ele2
+                            //return +1 if ele1>ele2
+
+                java.util.Map   (interface)
+
+                        is a collection of (key,value) pairs.
+
+                        1. key can not be duplicate
+                        2. key can not be null
+
+                        put(key,value),set(key,value),get(key),keySet(),containsKey(key)
+
+                        Implementations
+                            HashMap             no predictable retriving order
+                            LinkedHashMap       entry order of keys in retrival
+                            TreeMap             ascending order of magnitude of keys in retrival
+                                
+
+                java.util.Collections
+                        is a utility class offering a varity of utility methods for collections.
+
+            
+        java.util.regex
+
+        java.util.function
+
+        java.util.stream
