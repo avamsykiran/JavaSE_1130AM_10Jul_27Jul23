@@ -598,6 +598,48 @@ Java SE
             
         java.util.regex
 
-        java.util.function
+            Reg Exp Basics:  https://www.geeksforgeeks.org/write-regular-expressions/
 
-        java.util.stream
+            java.lang.String 
+                    matches
+
+            Pattern
+            Matcher
+
+        java.util.function - Functional Interface and Lambda Expressions
+
+        java.util.stream   - Streams API.
+
+
+    Multi-Layer Archetecture
+    --------------------------------------------------------------------------------------------
+
+        Persistence Logic         Bussiness Logic         Presentation Logic
+         Operations                 Operations                  Operation 
+         like add/                     like calicualtions,          like accepting data / commands
+         deleting, updating             validations,                    and displaying data / resposnes
+         and retriveing                 or any other
+         records                        bussiness related
+                                        logic
+
+        DB  <--->       DAO     <--model-->         Service      <---model--->         UI   <----> EndUser
+
+        Each layers has an interface to represent the abstract operations offered by the layer
+        and one or more implementations of that interface.
+
+        com.cts.hrapp
+                App
+        com.cts.hrapp.model
+                Employee
+        com.cts.hrapp.dao
+                EmployeeDAO (interface)     addEmployee,removeEmployee,getEmployeeById
+                EmployeeDAOXmlImpl (class)      addEmployee,removeEmployee,getEmployeeById
+                EmployeeDAOJdbcImpl (class)     addEmployee,removeEmployee,getEmployeeById
+        com.cts.hrapp.service
+                EmployeeService (interface)
+                EmployeeServiceImpl (class)
+        com.cts.hrapp.ui
+        com.cts.hrapp.exceptions
+
+
+

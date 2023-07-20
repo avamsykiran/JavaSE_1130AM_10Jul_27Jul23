@@ -1,6 +1,0 @@
-package com.cts.oopdemo.service;
-
-public interface AdBoard {
-	double area();
-	double perimeter();
-}

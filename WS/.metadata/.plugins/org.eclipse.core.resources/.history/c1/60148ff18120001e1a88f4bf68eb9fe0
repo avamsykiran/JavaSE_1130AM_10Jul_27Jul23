@@ -1,6 +1,0 @@
-package com.cts.oopdemo.service;
-
-public interface GeoimetricService {
-	double area();
-	double perimeter();
-}
