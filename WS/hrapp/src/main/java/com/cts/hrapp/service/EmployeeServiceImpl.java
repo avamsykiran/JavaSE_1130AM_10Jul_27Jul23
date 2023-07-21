@@ -1,5 +1,6 @@
 package com.cts.hrapp.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.cts.hrapp.dao.EmployeeDao;
@@ -16,9 +17,23 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	private String validate(Employee employee) {
-		String errMsg=null;
-		//...................
-		return errMsg;
+		StringBuffer errMsgs = new StringBuffer();
+		
+		if(employee.getFullName().isEmpty()) {
+			errMsgs.append("Full Name is a mandatory field!\n");
+		}
+		
+		if(employee.getJoinDate()==null) {
+			errMsgs.append("Join Date is a mandatory field!\n");
+		}else if(employee.getJoinDate().isAfter(LocalDate.now())) {
+			errMsgs.append("Join Date can not be a future date! \n");
+		}
+		
+		if(employee.getSalary()<=0) {
+			errMsgs.append("Salary can not be negaive!\n");
+		}
+		
+		return errMsgs.length()==0? null:errMsgs.toString();
 	}
 	
 	@Override
