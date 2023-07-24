@@ -608,8 +608,106 @@ Java SE
 
         java.util.function - Functional Interface and Lambda Expressions
 
+            An interface has no abstract methods, then it is called a marker interface.
+            An interface having only one abstract method is called a fucntional interface.            
+
+            Functional interface has a spaciality that they can be implemented with out a formal
+            class, using lambda expressions.
+
+            interface I1{
+                public void doSomething();
+            }
+
+            class C1 implements I1{
+                public void doSomething(){
+                    //wrtie some code...
+                }
+            }
+
+            I1 obj1 = new C1();
+
+            I1 obj2 = () -> {
+                //write some code...
+            };
+
+            //This fucntional interface is called a consumer. (has no return value)
+
+            interface I2 {
+                public String giveBackAString();
+            }
+
+            class C2 implements I2{
+                public String giveBackAString(){
+                    return "something";
+                }
+            }
+
+            I2 objA = new C2();
+
+            I2 objB = () -> "something";
+
+            //this functional interface is called a supplier.(no args but returns).
+
+            //if an functional interface return boolean , then it is called a predicate.
+
         java.util.stream   - Streams API.
 
+            Functional Programming
+                is a concept where a sequnce of operations are represented each as a fucntion
+                and these functions are executed in a chain format to support more maintainability.
+
+                f1(x) -> y
+                        f2(y) -> z
+                                f3(z) -> a
+                                        f4(a) -> b
+
+                this is called cahining.
+
+            Stream means flow of data.
+
+                -----------------
+                |               |
+                |   DATA        |
+                |               -------------|
+                -----------------            |
+                                             ↓ 
+                                            function1 ------|
+                                                            ↓
+                                                        function2-------|
+                                                                        ↓
+                                                                    function3 ----↓
+                                                                                |   ----------------|
+                                                                                |                   |
+                                                                                |   Modified Data   |
+                                                                                |                   |
+                                                                                |-------------------|
+
+            java.util.stream.Stream
+
+                    Stream s1 = Stream.of(val1,val2,val3...);
+                    Stream s2 = list.stream();
+                    Stream s3 = set.stream();
+                    Stream s4 = Arrays.stream(array);
+
+                    a stream once c=used can not be resued.
+
+                    forEach(consumer)       //executes the consuemr on each element of the stream.
+                    reduce(binaryOperator)  //returns one single value after executing cumulativly the binaryOperator
+                                                on the stream.
+
+                                            BinaryOperator<Integer> bo = (e1,e2)->e1+e2;
+                                            Arrays.stream(new Integer[]{11,15,16,20}).reduce(bo);
+
+                                            bo(bo(bo(11,15),16),20) ---------> 62
+
+                    forEach and reduce are called terminal operators.
+
+                    the below are called intermidiate operators
+
+                    map(tranformer)     //returns a new stream of transformed valeus
+                                        //trnaformer can be any fucntion thata a value and covnert it into another.
+
+                    filter(predicate)   //returns a new stream of values that give true for the predicate.
 
     Multi-Layer Archetecture
     --------------------------------------------------------------------------------------------

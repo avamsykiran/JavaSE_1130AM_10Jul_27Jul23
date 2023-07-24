@@ -1,9 +1,0 @@
-package com.cts.datetiemapidemo;
-
-public class DateTiemApiDemoApp {
-
-	public static void main(String[] args) {
-		
-	}
-
-}
