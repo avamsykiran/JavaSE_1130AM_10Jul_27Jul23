@@ -1,7 +1,0 @@
-package com.cts.utilsdemo.comparators;
-
-import java.util.Comparator;
-
-public class EmployeeComparatorOnFullName implements Comparator<Employee> {
-
-}

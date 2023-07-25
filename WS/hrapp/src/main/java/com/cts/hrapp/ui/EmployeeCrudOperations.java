@@ -17,7 +17,7 @@ public class EmployeeCrudOperations {
 	private EmployeeService empService;
 	private Scanner scan;
 	
-	public EmployeeCrudOperations(Scanner scan) {
+	public EmployeeCrudOperations(Scanner scan) throws DataOperationFailedException {
 		this.empService = new EmployeeServiceImpl();
 		this.scan=scan;
 	}

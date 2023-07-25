@@ -700,6 +700,8 @@ Java SE
 
                                             bo(bo(bo(11,15),16),20) ---------> 62
 
+                    collect(Collector)      used to collect all the data from a stream into a list or a set ..etc.,
+
                     forEach and reduce are called terminal operators.
 
                     the below are called intermidiate operators
@@ -708,6 +710,38 @@ Java SE
                                         //trnaformer can be any fucntion thata a value and covnert it into another.
 
                     filter(predicate)   //returns a new stream of values that give true for the predicate.
+
+        java.io         InputOutput Streams
+
+                        IOException
+                        File
+
+                        InputStream                 binary in stream
+                            |- FileInputStream
+                            |- DataInputStream
+                            |- ObjectInputStream    //deserialization
+
+                        OutputStream                binary out stream
+                            |- PrintStream          System.out, System.err
+                            |- FileOutputStream
+                            |- DataOutputStream
+                            |- ObjectOutputStream   //serialization
+
+                        Reader                      text in stream
+                            |- FileReader
+                            |- InputStreamReader
+                            |- BufferedReader
+
+                        Writer                      text out stream
+                            |- FileWriter
+                            |- PrintWriter
+
+        java.nio        NonBlocking InputOutput Streams
+
+                        Path
+                        Paths
+                        Files
+                        Directories
 
     Multi-Layer Archetecture
     --------------------------------------------------------------------------------------------

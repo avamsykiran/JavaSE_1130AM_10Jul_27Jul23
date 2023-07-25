@@ -1,0 +1,4 @@
+
+Thsi is a test file content.
+trying to wrtie file content from java program.
+we are using non blocking io streams api introduced in jdk 1.8.
