@@ -1,8 +1,21 @@
 package com.cts.hrapp.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Employee implements Comparable<Employee> {
+/*
+ create table emps(
+  eid int primary key AUTO_INCREMENT,
+  fnm varchar(50) not null,
+  sal double not null,
+  isc boolean not null,
+  jdt date not null
+ );
+ * */
+
+public class Employee implements Comparable<Employee>,Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private int empId;
 	private String fullName;

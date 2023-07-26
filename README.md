@@ -743,6 +743,106 @@ Java SE
                         Files
                         Directories
 
+        java.sql       JDBC - Java Database Connectivity
+
+                       All RDBMS can respond to SQL.
+
+                       RDBMS    <----SQL-----            JavaApp 
+                                -----data---->
+
+                       Database Driver is a software used to facilitate the communication between Java-applications
+                       and RDBMS (S)
+
+                       RDBMS    <---->  DRIVER <------> JavaApp
+
+                       We can not expect one single driver to work with all RDBMS. Each RDBMS offers its own
+                       DRIVER.
+
+                       MySQL            <----> MySQL/ConnectorJ Driver  <-------> JavaApp
+                       Oracle           <----> Oracle Thin Driver       <-------> JavaApp
+                       Ms SQL Server    <----> Microsoft Jet Driver     <-------> JavaApp
+
+                       and so on...
+
+                       this approach is not a recommendable as the app get tightly coupled with the api offered 
+                       by the driver and each time we want to chagne the RDBMS, the entire DAO layer
+                       must be rewritten.
+
+                       Here is where JDBC solves. JDBC is an java specification. specification means
+                       an abstract layer having interfaces and abstract classes which must be implemented
+                       by thrid party vendors.
+
+                       Here all the RDBMS drivers for java must implement the JDBC specification.
+
+                       MySQL            <----> MySQL/ConnectorJ Driver  <-------> 
+                       Oracle           <----> Oracle Thin Driver       <-------> JDBC  <------> JavaApp
+                       Ms SQL Server    <----> Microsoft Jet Driver     <-------> 
+
+                      By using JDBC api inour application, the application becomes independent of the 
+                      driver and need not be modified whatsoever RDBMS we may use.
+
+
+                      JDBC api
+
+                        java.sql
+
+                            Connection connection = DriverManager.getConnection(connectionString,userId,password);
+
+                            MySQL    MySQL/ConnectorJ Driver
+                                     com.mysql.jdbc.cj.Driver               Driver Class
+                                     mysql:jdbc://localhost:3306/dbName     connectionString        
+
+                            Oracle   Oracle Thin Driver 
+                                     oracle.jdbc.driver.OracleDriver                   Driver Class
+                                     oracle:jdbc:thin://localhost:5125/serviceName  connectionString
+
+                            Statement statement = connection.createStatement();
+                            PreparedStatement preparedStatement = connection.prepareStatement(sqlQry);
+                            CallableStatement callableStatement = connection.prepareCall(sqlFunctionCall);
+
+                            statement and preparedStatement can execute sql queries and bring data.
+
+                            boolean isSuccess = statement.execute(sqlQry);
+                            int rowsCount = statement.executeUpdate(sqlQry);
+                            ResultSet resultSet = statement.executeQuery(sqlQry);
+
+                            boolean isSuccess = preparedStatement.execute();
+                            int rowsCount = preparedStatement.executeUpdate();
+                            ResultSet resultSet = preparedStatement.executeQuery();
+
+                            1. execute method is used to run DDL queries like create/alter/drop
+                            2. executeUpdate method is sued to run DML queries like insert/update/delete
+                            3. executeQuery method is used to run DRL queries using select statement.
+
+                            statement                       preparedStatement
+                            -----------------------------------------------------
+                            one obj can execute             we need seperate objs for each qry
+                            multiple qrys
+
+                            the qry compilation,            the qry syntax verification happens only once.
+                            syntax verification
+                            happens everytiem the qry is 
+                            executed
+
+                            does not support qry params     supports qry parameters
+
+                            ResultSet
+                                is an interface the provides access to the records
+                                retrived from a RDBMS.
+
+                                boolean next();     //to move forward from one record to another
+                                                    //returns true if moved orelse false if no moe records to move to.
+                                
+                                getInt(colIndex|colName)
+                                getString(colIndex|colName)
+                                getFloat(colIndex|colName)
+                                getDate(colIndex|colName)   -----> java.sql.Date
+                                    ....etc.,
+
+
+
+                            
+
     Multi-Layer Archetecture
     --------------------------------------------------------------------------------------------
 
