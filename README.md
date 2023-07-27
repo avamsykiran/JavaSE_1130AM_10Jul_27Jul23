@@ -790,11 +790,11 @@ Java SE
 
                             MySQL    MySQL/ConnectorJ Driver
                                      com.mysql.jdbc.cj.Driver               Driver Class
-                                     mysql:jdbc://localhost:3306/dbName     connectionString        
+                                     jdbc:mysql://localhost:3306/dbName     connectionString        
 
                             Oracle   Oracle Thin Driver 
                                      oracle.jdbc.driver.OracleDriver                   Driver Class
-                                     oracle:jdbc:thin://localhost:5125/serviceName  connectionString
+                                     jdbc:oracle:thin://localhost:5125/serviceName  connectionString
 
                             Statement statement = connection.createStatement();
                             PreparedStatement preparedStatement = connection.prepareStatement(sqlQry);
@@ -839,9 +839,51 @@ Java SE
                                 getDate(colIndex|colName)   -----> java.sql.Date
                                     ....etc.,
 
+        Multi - Threading
+
+            Allows us to execute two or job prallelly or asynchrnously.
+            Each and every function executes in a thread.
+
+            java.lang.Runnable      void run()
+                        |
+                        java.lang.Thread
+                                    Thread(String threadName)
+                                    Thread(Runnable job,String threadName)
+
+                                    void start()
+                                    int getPriority();
+                                    void setPriority(int);  //1 is least prior and 10 is the highest priority
+                                    String getName();
+                                    void setName();
+                                    void join();
+
+                                    static Thread currentThread();
+                                    static void sleep(long);
+
+            A class is derived from Runnable interface or Thread class and the run() method is overriden to
+            create our own thread.
+
+            Thread Life Cycle
+
+                            new Thread(runnableJob);
+                                    ↓
+                                [ initiated ]
+                                    |
+                                    | start()
+                                    |
+                                    ↓
+                                [ READY...! ] --- once CPU and other resources are available---→|
+                                       ↑                                                        |
+                                       |                                                        |
+                                       |                                                        ↓
+                               [[PAUSED ..] ←-------(sleep(1000))---------------  [ EXECUTION (run())... ]
+                                                                                                |
+                                                                                                | (completes execution)
+                                                                                                |
+                                                                                                ↓
+                                                                                        [ STOP/ TERMINDATED ]
 
 
-                            
 
     Multi-Layer Archetecture
     --------------------------------------------------------------------------------------------

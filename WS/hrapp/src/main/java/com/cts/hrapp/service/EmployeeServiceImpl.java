@@ -4,8 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.cts.hrapp.dao.EmployeeDao;
-import com.cts.hrapp.dao.EmployeeDaoIOStreamImpl;
-import com.cts.hrapp.dao.EmployeeDaoImpl;
+import com.cts.hrapp.dao.EmployeeDaoJdbcImpl;
 import com.cts.hrapp.exception.DataOperationFailedException;
 import com.cts.hrapp.model.Employee;
 
@@ -15,7 +14,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	public EmployeeServiceImpl() throws DataOperationFailedException {
 		//this.employeeDao = new EmployeeDaoImpl();
-		this.employeeDao = new EmployeeDaoIOStreamImpl();
+		//this.employeeDao = new EmployeeDaoIOStreamImpl();
+		this.employeeDao = new EmployeeDaoJdbcImpl();
 	}
 
 	private String validate(Employee employee) {
